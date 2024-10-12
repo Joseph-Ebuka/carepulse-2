@@ -6,6 +6,7 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import CustomFormField from "../CustomFormField";
+import SubmitButton from "../SubmitButton";
 
 export enum FormFieldType {
   INPUT = "input",
@@ -44,12 +45,30 @@ const PatientForm = () => {
           control={form.control}
           fieldType={FormFieldType.INPUT}
           name="name"
-          label="full name"
+          label="Full name"
           placeholder="John Doe"
           iconSrc="/assets/icons/user.svg"
           iconAlt="user"
         />
-        <Button type="submit">Submit</Button>
+         <CustomFormField
+          control={form.control}
+          fieldType={FormFieldType.INPUT}
+          name="email"
+          label="Email"
+          placeholder="johndoe@gmail.com"
+          iconSrc="/assets/icons/email.svg"
+          iconAlt="email"
+        />
+          <CustomFormField
+          control={form.control}
+          fieldType={FormFieldType.PHONE_INPUT}
+          name="phone"
+          label="Phone Number"
+          placeholder="+23490568290"
+          iconSrc="/assets/icons/email.svg"
+          iconAlt="email"
+        />
+        <SubmitButton isLoading={isLoading}/>
       </form>
     </Form>
   );
