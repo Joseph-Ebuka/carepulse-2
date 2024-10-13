@@ -7,7 +7,7 @@ const Register = () => {
       <section className="remove-scrollbar container">
         <div className="sub-container max-w-[860px] flex-1 flex-col py-10">
           <Image
-            src="/assets/icons/logo.svg"
+            src="/assets/icons/logo-full.svg"
             alt="carepulse"
             width={1000}
             height={1000}
