@@ -123,7 +123,12 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
       );
     case FormFieldType.SKELETON:
       return renderSkeleton ? renderSkeleton(field) : null;
-
+case FormFieldType.TEXTAREA:
+  return(
+    <Formcontrol>
+      <TextArea placeholder={placeholder} {...field} className="shad-textArea"/>
+    </Formcontrol>
+  )
     default:
       break;
   }

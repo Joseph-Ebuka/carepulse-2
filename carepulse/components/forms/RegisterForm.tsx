@@ -208,7 +208,23 @@ const RegisterForm = ({ user }: { user: User }) => {
             placeholder="(555) 123-4567"
           />
         </div>
-        <div className="flex flex-col gap-6 xl:flex-row"></div>
+        <div className="flex flex-col gap-6 xl:flex-row">
+        <CustomFormField
+            fieldType={FormFieldType.TEXTAREA}
+            control={form.control}
+            name="allergies"
+            label="Allergies (if any)"
+            placeholder="Peanuts, Pencillin, Pollen"
+          />
+
+          <CustomFormField
+            fieldType={FormFieldType.TEXTAREA}
+            control={form.control}
+            name="currentMedication"
+            label="Current medication (if any)"
+            placeholder="Paracetamol, Ibuprofen(200mg)"
+          />
+        </div>
         <div className="flex flex-col gap-6 xl:flex-row"></div>
         <SubmitButton isLoading={isLoading}>Get Started</SubmitButton>
       </form>
