@@ -10,7 +10,7 @@ export const APPOINTMENT_COLLECTION_ID =
 export const DOCTOR_COLLECTION_ID =
   process.env.NEXT_PUBLIC_DOCTOR_COLLECTION_ID;
 export const BUCKET_ID = process.env.NEXT_PUBLIC_BUCKET_ID;
-const ENDPOINT = process.env.NEXT_PUBLIC_ENDPOINT;
+export const ENDPOINT = process.env.NEXT_PUBLIC_ENDPOINT;
 const client = new sdk.Client();
 
 client.setEndpoint(ENDPOINT!).setProject(PROJECT_ID!).setKey(API_KEY!);

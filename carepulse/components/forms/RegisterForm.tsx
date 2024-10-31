@@ -9,7 +9,7 @@ import SubmitButton from "../SubmitButton";
 import { useState } from "react";
 import { PatientFormValidation, UserFormValidation } from "@/lib/validation";
 import { useRouter } from "next/navigation";
-import { createUser, getUser } from "@/lib/actions/patients.actions";
+import { createUser, getUser, registerPatient } from "@/lib/actions/patients.actions";
 import { FormFieldType } from "./PatientForm";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import {
@@ -43,11 +43,11 @@ const RegisterForm = ({ user }: { user: User }) => {
       values.identificationDocument &&
       values.identificationDocument.length > 0
     ) {
-      const bloFile = new Blob([values.identificationDocument[0]], {
+      const blobFile = new Blob([values.identificationDocument[0]], {
         type: values.identificationDocument[0].type,
       });
       formData = new FormData();
-      formData.append("blobFile", bloFile);
+      formData.append("blobFile", blobFile);
       formData.append("filename", values.identificationDocument[0].name);
     }
     try {
@@ -59,7 +59,7 @@ const RegisterForm = ({ user }: { user: User }) => {
       };
 
       const patient = await registerPatient(patientData);
-      if(patient) router.push(`/patients/${user.$id}/new-appointments `)
+      if(patient) router.push(`/patients/${user.$id}/new-appointments`)
     } catch (error) {
       console.log(error);
     }
