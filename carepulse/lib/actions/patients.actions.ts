@@ -59,6 +59,7 @@ export const registerPatient = async ({
           identificationDocument?.get("fileName") as string
         );
 
+        console.log(identificationDocument)
       file = await storage.createFile(BUCKET_ID!, ID.unique(), inputFile);
     }
 
